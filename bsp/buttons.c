@@ -25,10 +25,11 @@
 #include <buttons.h>
 
 /*** Button Definitions *********************************************/
-#define S1_PORT  PORTAbits.RA3
+//JB#define S1_PORT  PORTAbits.RA3
 
-#define BUTTON_PRESSED      0
-#define BUTTON_NOT_PRESSED  1
+#define S1_PORT  PORTCbits.RC2
+#define BUTTON_PRESSED      1//JB
+#define BUTTON_NOT_PRESSED  0//JB
 
 #define PIN_INPUT           1
 #define PIN_OUTPUT          0
@@ -87,6 +88,9 @@ void BUTTON_Enable(BUTTON button)
     switch(button)
     {
         case BUTTON_S1:
+            //JB
+            TRISCbits.TRISC2 = PIN_INPUT;
+            ANSELC = 0;
             break;
 
         case BUTTON_NONE:

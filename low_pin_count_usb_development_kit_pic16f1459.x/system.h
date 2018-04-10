@@ -82,3 +82,6 @@ void SYSTEM_Initialize( SYSTEM_STATE state );
 #define SYSTEM_Tasks()
 
 #endif //SYSTEM_H
+
+//JB
+#define USE_INTERNAL_OSC
